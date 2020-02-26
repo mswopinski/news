@@ -24,13 +24,22 @@
 
     <div class="container mt-5">
       <h1>News</h1>
-      <label>Location:</label>
-      <form action="/news">
-        <input type="text" name="location">
-        <button type="submit">Go there</submit>
-      </form>
     </div>
 
+    <h5>Today's Forecast:</h5>
+    <ul>
+        <li><%= "In #{@city} expect a high of #{@forecast["currently"]["temperature"]} and #{@forecast["currently"]["summary"]}" %></li>
+    </ul>
+
+    <h5>Extended Forecast:</h5>
+    <ul>
+        
+        <% for day in @forecast["daily"]["data"] %>
+        <li><%= "A high temperature of #{day["temperatureHigh"]} and #{day["summary"]}" %></li>
+        <% end %>
+    </ul>
+
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
