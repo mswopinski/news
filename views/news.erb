@@ -24,7 +24,10 @@
 
     <div class="container mt-5">
       <h1>News</h1>
-    </div>
+      <p>
+        <a href="/" class="btn btn-primary">Go Back!</a>
+      </p>
+      </div>
 
     <h5>Today's Forecast:</h5>
     <ul>
@@ -39,6 +42,12 @@
         <% end %>
     </ul>
 
+    <h5>Top News:</h5>
+    <ul>        
+        <% for story in @articles %>
+        <li><%= story["title"].to_s %></li>
+        <% end %>
+    </ul>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
